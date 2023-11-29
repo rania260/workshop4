@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Online Store</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <img th:src="@{/img/logo.png}" alt="" class="logo">
+    <h1>Product List</h1>
+    
+    <table border="1">
+        
+        <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Image</th>
+        </tr>
+
+        <th:block th:each="product: ${products}">
+            <tr>
+            <td th:text="${product.code}">Code</td>
+            <td th:text="${product.name}">Name</td>
+            <td th:text="${product.price}">Price</td>
+            <td th:text="${product.quantity}">Quantity</td>
+            <td>
+                <img th:src="${product.image}?@{|/img/${product.image}|}:@{/img/no-image.png}" width="50px" height="50px">
+            </td>
+            </tr>
+        </th:block>
+    </table>
+
+</body>
+</html>
