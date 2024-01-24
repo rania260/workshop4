@@ -1,0 +1,14 @@
+body {
+    background-color: #f2f2f2;
+    width: 95%;
+    margin: 0px auto;
+}
+
+h1, a{
+    
+    color: #4609b9;
+}
+.logo {
+    display: block;
+    margin: 0 auto;
+}

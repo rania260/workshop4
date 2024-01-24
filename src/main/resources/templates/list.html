@@ -11,13 +11,13 @@
     <h1>Product List</h1>
     
     <table border="1">
-        
         <tr>
         <th>Code</th>
         <th>Name</th>
         <th>Price</th>
         <th>Quantity</th>
         <th>Image</th>
+        <th>Actions</th>
         </tr>
 
         <th:block th:each="product: ${products}">
@@ -29,9 +29,19 @@
             <td>
                 <img th:src="${product.image}?@{|/img/${product.image}|}:@{/img/no-image.png}" width="50px" height="50px">
             </td>
-            </tr>
-        </th:block>
-    </table>
-
+            <td>
+        <form th:action="@{|products/${product.id}/edit|}">
+          <input type="submit" value="Edit">
+        </form>
+        <form th:action="@{|products/${product.id}/delete|}" method="post">
+          <input type="submit" value="Delete">
+        </form>
+      </td>
+    </tr>
+    
+  </table>
+  <form th:action="@{/products/create}">
+    <input type="submit" value="AddProduct">
+  </form>
 </body>
 </html>

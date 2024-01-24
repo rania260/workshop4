@@ -37,3 +37,13 @@ h1 {
 .text{
     color: blue;
 }
+
+.btn{
+    background-color: #bc3ab2;
+    color: #ffffff;
+}
+
+button{
+    background-color: #6c6969;
+    color: #ffffff;
+}
